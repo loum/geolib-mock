@@ -1,0 +1,3 @@
+--index-url http://repo.corp.f7:8081/artifactory/pip-geospatial-local
+
+python-geosutils==0.05
