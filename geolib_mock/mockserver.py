@@ -10,7 +10,7 @@ import signal
 import os
 import time
 
-from oct.utils.log import log
+from geosutils.log import log
 
 
 class MockServer(object):
