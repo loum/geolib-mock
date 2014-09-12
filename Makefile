@@ -35,13 +35,13 @@ test:
 	PYTHONPATH=$(PYTHONPATH) $(NOSE) $(TEST)
 
 test_env:
-	$(NOSE) $(TEST)
+	$(NOSE_ENV) $(TEST)
 
 coverage: test
 	$(COVERAGE) xml -i
 
 coverage_env: test_env
-	$(COVERAGE_env) xml -i
+	$(COVERAGE_ENV) xml -i
 
 uninstall:
 	$(RPM) -e python-geoutils
