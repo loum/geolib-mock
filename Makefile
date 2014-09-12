@@ -1,7 +1,9 @@
 PY=/usr/bin/python
 NOSE=/usr/bin/nosetests1.1 -s -v --with-xunit --with-coverage --cover-erase --cover-package geolib_mock
+NOSE_ENV=.env/bin/nosetests -s -v --with-xunit --with-coverage --cover-erase --cover-package geolib_mock
 GIT=/usr/bin/git
 COVERAGE=/usr/bin/coverage
+COVERAGE_ENV=.env/bin/coverage
 PYTHONPATH=.:../geosutils
 
 # The TEST variable can be set to allow you to control which tests
@@ -32,8 +34,14 @@ build: docs rpm
 test:
 	PYTHONPATH=$(PYTHONPATH) $(NOSE) $(TEST)
 
+test_env:
+	$(NOSE) $(TEST)
+
 coverage: test
 	$(COVERAGE) xml -i
+
+coverage_env: test_env
+	$(COVERAGE_env) xml -i
 
 uninstall:
 	$(RPM) -e python-geoutils
