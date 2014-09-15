@@ -82,7 +82,7 @@ class MockServer(object):
                     '-p',
                     self.properties_file]
             self.proc = subprocess.Popen(args)
-            time.sleep(1)
+            time.sleep(2)
             self.is_active = True
 
         log.info('Accumulo Mock Server is_active status: %s' %
