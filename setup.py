@@ -5,7 +5,7 @@ import os
 import glob
 import fnmatch
 import shutil
-from distutils.core import setup
+from setuptools import setup
 
 VERSION = '0.0.0'
 
@@ -70,6 +70,11 @@ setup(name='python-geolib-mock',
       author='Lou Markovski',
       author_email='lou.markovski@gmail.com',
       url='',
+      install_requires=['python-geosutils==0.0.6',
+                        'nose==1.1.2',
+                        'unittest2==0.5.1',
+                        'sphinx==1.0.8',
+                        'coverage==3.7'],
       packages=['geolib_mock'],
       package_dir={'geolib_mock': 'geolib_mock'},
       data_files=FILES)
